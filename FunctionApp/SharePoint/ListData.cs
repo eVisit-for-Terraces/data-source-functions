@@ -36,8 +36,8 @@ namespace Plumsail.DataSource.SharePoint
             var queryOptions = new List<QueryOption>
             {
                 new QueryOption("select", "id"),
-                new QueryOption("filter", $"fields/Title eq '{req.Query["visittype"]}' AND fields/Weekday eq '{req.Query["weekday"]}' AND fields/WeekNumber eq '{req.Query["weeknumber"]}' AND fields/Bookings lt '{req.Query["bookings"]}'"),
-                new QueryOption("expand", "fields(select=Title,Time)")
+                new QueryOption("filter", $"fields/Title eq '{req.Query["visittype"]}'"),
+                new QueryOption("expand", "fields(select=Title,id)")
             };
             var itemsPage = await list.Items
                 .Request(queryOptions)
