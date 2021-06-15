@@ -37,7 +37,7 @@ namespace Plumsail.DataSource.SharePoint
             {
                 new QueryOption("select", "id"),
                 new QueryOption("filter", $"fields/Title eq '{req.Query["VisitType"]}'"),
-                new QueryOption("expand", "fields(select=Title,Author,Location)")
+                new QueryOption("expand", "fields(select=Title,Author)")
             };
             var itemsPage = await list.Items
                 .Request(queryOptions)
